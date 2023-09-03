@@ -1,0 +1,20 @@
+version: "3"
+
+volumes:
+  data: {}
+
+services:
+  nextcloud:
+    build: .
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - "10000:443"
+    environment:
+      - TZ=America/Toronto
+      - PUID=1000
+      - PGID=1000
+    env_file:
+      - .env
+    volumes:
+      - data:/data
