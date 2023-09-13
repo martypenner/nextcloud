@@ -1,6 +1,7 @@
 version: "3"
 
 volumes:
+  config: {}
   data: {}
 
 services:
@@ -18,3 +19,4 @@ services:
       - .env
     volumes:
       - data:/data
+      - config:/config
