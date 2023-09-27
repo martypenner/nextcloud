@@ -10,7 +10,8 @@ services:
     container_name: nextcloud
     restart: unless-stopped
     ports:
-      - "10000:443"
+      - "10000:80"
+      - "10001:443"
     environment:
       - TZ=America/Toronto
       - PUID=1000
